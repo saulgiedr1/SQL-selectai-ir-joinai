@@ -122,6 +122,7 @@ JOIN ingridientai i ON i.id=sri.ingridientas_id
 WHERE r.id=2;
 
 --Grąžinkite receptą, kuris turi daugiausiai ingredientų 
+--cia klaida, ingridientu skaiciu rodo didziausia, bet ne tam receptui
 
 SELECT a.pavadinimas, MAX(ingridientu_skaicius) AS daugiausia
 FROM (
@@ -130,4 +131,5 @@ FROM receptai r
 JOIN sujungimas_receptai_ingridientai sri ON r.id=sri.receptas_id
 JOIN ingridientai i ON i.id=sri.ingridientas_id
 GROUP BY r.id) a;
+
 
