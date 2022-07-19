@@ -20,7 +20,7 @@ WHERE  i.kaina < 5.80 AND i.kaina > 2.20;
 
 SELECT i.pavadinimas , i.id
 FROM ingridientai i
-WHERE  i.id  >= 6;
+WHERE  i.id  >= 6 AND i.id <=10 ;
 
 --didziausia kaina
 
