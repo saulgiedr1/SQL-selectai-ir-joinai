@@ -113,11 +113,21 @@ JOIN sujungimas_ingridientai_alergijos sia ON i.id=sia.ingridientas_id
 JOIN alergijos a ON a.id=sia.alergija_id
 WHERE a.pavadinimas="glitimas";
 
-Grąžinkite KIEK yra ingredientų antrame recepte.
+--Grąžinkite KIEK yra ingredientų antrame recepte.
 
 SELECT COUNT( i.id)
 FROM receptai r
 JOIN sujungimas_receptai_ingridientai sri ON r.id=sri.receptas_id
 JOIN ingridientai i ON i.id=sri.ingridientas_id
 WHERE r.id=2;
+
+--Grąžinkite receptą, kuris turi daugiausiai ingredientų 
+
+SELECT a.pavadinimas, MAX(ingridientu_skaicius) AS daugiausia
+FROM (
+SELECT r.pavadinimas , COUNT(*) AS ingridientu_skaicius 
+FROM receptai r
+JOIN sujungimas_receptai_ingridientai sri ON r.id=sri.receptas_id
+JOIN ingridientai i ON i.id=sri.ingridientas_id
+GROUP BY r.id) a;
 
