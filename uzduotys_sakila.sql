@@ -117,6 +117,10 @@ WHERE f.rating='PG-13';
 SELECT film.rental_duration * film.rental_rate AS total
 FROM film;
 
+SELECT film.title,  film.length, film.rental_duration * film.rental_rate AS total_rental_cost
+FROM film
+WHERE length BETWEEN 100 AND 120;
+
 
 
 
