@@ -120,6 +120,11 @@ FROM film;
 SELECT film.title,  film.length, film.rental_duration * film.rental_rate AS total_rental_cost
 FROM film
 WHERE length BETWEEN 100 AND 120;
+--paskutine
+SELECT staff.first_name,staff.last_name,address.address,city.city
+FROM staff
+JOIN address ON staff.staff_id=address.address_id
+JOIN city ON address.address_id=city.city_id;
 
 
 
