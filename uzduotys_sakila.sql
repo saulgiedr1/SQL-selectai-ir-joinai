@@ -112,7 +112,10 @@ FROM film f
 JOIN film_actor ON f.film_id=film_actor.film_id
 JOIN actor a ON a.actor_id=film_actor.actor_id
 WHERE f.rating='PG-13';
+--stulpeliu sandauga
 
+SELECT film.rental_duration * film.rental_rate AS total
+FROM film;
 
 
 
